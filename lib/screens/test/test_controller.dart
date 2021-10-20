@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class HomeController extends GetxController {
+class TestController extends GetxController {
   RxDouble sliderValue = 0.0.obs;
   RxDouble sliderValueTwo = 0.0.obs;
   RxDouble sliderValueThree = 0.0.obs;
