@@ -1,5 +1,7 @@
 import 'package:flutter_application_4/screens/home/home.dart';
 import 'package:flutter_application_4/screens/home/home_bindings.dart';
+import 'package:flutter_application_4/screens/mental_helse/mh_main/mh_main.dart';
+import 'package:flutter_application_4/screens/mental_helse/mh_main/mh_main_bindings.dart';
 import 'package:flutter_application_4/screens/root/root_bindings.dart';
 import 'package:flutter_application_4/screens/root/root_view.dart';
 import 'package:get/get.dart';
@@ -23,6 +25,11 @@ class AppPages {
             name: Routes.Home,
             page: () => Home(),
             binding: HomeBindings(),
+          ),
+          GetPage(
+            name: Routes.mhMain,
+            page: () => MhMain(),
+            binding: MhMainBindings(),
           )
         ])
   ];
