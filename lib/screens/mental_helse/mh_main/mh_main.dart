@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:flutter_application_4/screens/mental_helse/logg/logg.dart';
 import 'package:flutter_application_4/screens/mental_helse/resultat/resultat.dart';
 import 'package:flutter_application_4/screens/mental_helse/test_page/test.dart';
 import 'package:get/get.dart';
@@ -17,6 +18,7 @@ import 'package:get/get.dart';
 
 import 'mh_main_controller.dart';
 
+//Du kan bytte ut navnet "MhMain" med et annet
 class MhMain extends StatefulWidget {
   @override
   State createState() => _MhMainState();
@@ -37,6 +39,8 @@ class _MhMainState extends State<MhMain> {
               child: IndexedStack(
                 index: controller.tabIndex,
                 children: [
+                  Home(),
+                  Logg(),
                   Resultat(),
                   Test(),
                 ],
@@ -46,11 +50,13 @@ class _MhMainState extends State<MhMain> {
               Positioned(
                 child: BottomNavigationBar(
                   key: _bottomNavigationBarKey,
+                  //funksjonaliteten til navigasjonsbaren ligger i controller
                   onTap: controller.changeTabIndex,
                   currentIndex: controller.tabIndex,
                   showSelectedLabels: true,
                   showUnselectedLabels: true,
                   type: BottomNavigationBarType.fixed,
+                  //her er hvert element i navigasjonsbaren, du kan bytte ut ikonene med andre.
                   items: [
                     BottomNavigationBarItem(
                         icon: Icon(Icons.home), label: "Hjem"),
@@ -81,126 +87,12 @@ class _MhMainState extends State<MhMain> {
                 child: Padding(
                     padding: const EdgeInsets.only(left: 10, right: 10),
                     child: Container(
-                        height: 3,
-                        width: (bottomNavigationBarSize.width - 80) / 4,
-                        color: Theme.of(context).primaryColor)),
+                      height: 3,
+                      width: (bottomNavigationBarSize.width - 80) / 5,
+                    )),
               ),
             ]));
       },
     );
   }
 }
-
-
-// class MhMain extends GetView<MhMainController> {
-//   final TextStyle unselectedLabelStyle = TextStyle(
-//       color: Colors.white.withOpacity(0.5),
-//       fontWeight: FontWeight.w500,
-//       fontSize: 12);
-
-//   final TextStyle selectedLabelStyle =
-//       TextStyle(color: Colors.white, fontWeight: FontWeight.w500, fontSize: 12);
-//   @override
-//   buildBottomNavigationMenu(context, MhMainController) {
-//     return Obx(() => Container(
-//           decoration: BoxDecoration(
-//               gradient: LinearGradient(
-//             begin: Alignment.topRight,
-//             end: Alignment.bottomLeft,
-//             colors: [
-//               Colors.blue.shade50,
-//               Colors.blue.shade200,
-//               Colors.blue.shade400,
-//               Colors.blue.shade600,
-//             ],
-//           )),
-//           child: MediaQuery(
-//               data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
-//               child: SizedBox(
-//                 height: 54,
-//                 child: BottomNavigationBar(
-//                   showUnselectedLabels: true,
-//                   showSelectedLabels: true,
-//                   onTap: MhMainController.changeTabIndex,
-//                   currentIndex: MhMainController.tabIndex.value,
-//                   unselectedItemColor: Colors.white.withOpacity(0.5),
-//                   selectedItemColor: Colors.white,
-//                   unselectedLabelStyle: unselectedLabelStyle,
-//                   selectedLabelStyle: selectedLabelStyle,
-//                   items: [
-//                     BottomNavigationBarItem(
-//                       icon: Container(
-//                         margin: EdgeInsets.only(bottom: 7),
-//                         child: Icon(
-//                           Icons.home,
-//                           size: 20.0,
-//                         ),
-//                       ),
-//                       label: 'Hjem',
-//                       backgroundColor: Color.fromRGBO(36, 54, 101, 1.0),
-//                     ),
-//                     BottomNavigationBarItem(
-//                       icon: Container(
-//                         margin: EdgeInsets.only(bottom: 7),
-//                         child: Icon(
-//                           Icons.edit,
-//                           size: 20.0,
-//                         ),
-//                       ),
-//                       label: 'Logg',
-//                       backgroundColor: Color.fromRGBO(36, 54, 101, 1.0),
-//                     ),
-//                     BottomNavigationBarItem(
-//                       icon: Container(
-//                         margin: EdgeInsets.only(bottom: 7),
-//                         child: Icon(
-//                           Icons.auto_graph,
-//                           size: 20.0,
-//                         ),
-//                       ),
-//                       label: 'Progresjon',
-//                       backgroundColor: Color.fromRGBO(36, 54, 101, 1.0),
-//                     ),
-//                     BottomNavigationBarItem(
-//                       icon: Container(
-//                         margin: EdgeInsets.only(bottom: 7),
-//                         child: Icon(
-//                           Icons.bookmarks_rounded,
-//                           size: 20.0,
-//                         ),
-//                       ),
-//                       label: 'Test',
-//                       backgroundColor: Color.fromRGBO(36, 54, 101, 1.0),
-//                     ),
-//                     BottomNavigationBarItem(
-//                       icon: Container(
-//                         margin: EdgeInsets.only(bottom: 7),
-//                         child: Icon(
-//                           Icons.view_list_outlined,
-//                           size: 20.0,
-//                         ),
-//                       ),
-//                       label: 'Resultater',
-//                     ),
-//                   ],
-//                 ),
-//               )),
-//         ));
-//   }
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return SafeArea(
-//         child: Scaffold(
-//       bottomNavigationBar:
-//           buildBottomNavigationMenu(context, MhMainController()),
-//       body: Obx(() => IndexedStack(
-//             index: MhMainController.tabIndex.value,
-//             children: [
-//               Resultat(),
-//               Test(),
-//             ],
-//           )),
-//     ));
-//   }
-// }
