@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-class MhMainController extends GetxController {
+class FhMainController extends GetxController {
   var tabIndex = 0;
 
   void changeTabIndex(int index) {

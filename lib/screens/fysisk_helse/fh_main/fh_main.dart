@@ -1,22 +1,22 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
-import 'package:flutter_application_4/screens/mental_helse/mh_logg/mh_logg.dart';
-import 'package:flutter_application_4/screens/mental_helse/mh_home/mh_home.dart';
-import 'package:flutter_application_4/screens/mental_helse/mh_progresjon/progresjon.dart';
-import 'package:flutter_application_4/screens/mental_helse/mh_resultat/resultat.dart';
-import 'package:flutter_application_4/screens/mental_helse/mh_test_page/test.dart';
+import 'package:flutter_application_4/screens/fysisk_helse/fh_logg/fh_logg.dart';
+import 'package:flutter_application_4/screens/fysisk_helse/fh_home/fh_home.dart';
+import 'package:flutter_application_4/screens/fysisk_helse/fh_progresjon/fh_progresjon.dart';
+import 'package:flutter_application_4/screens/fysisk_helse/fh_resultat/fh_resultat.dart';
+import 'package:flutter_application_4/screens/fysisk_helse/fh_test_page/fh_test.dart';
 import 'package:get/get.dart';
 
-import 'mh_main_controller.dart';
+import 'fh_main_controller.dart';
 
 //Du kan bytte ut navnet "MhMain" med et annet
-class MhMain extends StatefulWidget {
+class FhMain extends StatefulWidget {
   @override
-  State createState() => _MhMainState();
+  State createState() => _FhMainState();
 }
 
-class _MhMainState extends State<MhMain> {
+class _FhMainState extends State<FhMain> {
   GlobalKey _bottomNavigationBarKey = GlobalKey();
 
   Size bottomNavigationBarSize = Size(0, 0);
@@ -24,7 +24,7 @@ class _MhMainState extends State<MhMain> {
   @override
   Widget build(BuildContext context) {
     bottomNavigationBarSize = MediaQuery.of(context).size;
-    return GetBuilder<MhMainController>(
+    return GetBuilder<FhMainController>(
       builder: (controller) {
         return Scaffold(
             body: SafeArea(
@@ -43,11 +43,11 @@ class _MhMainState extends State<MhMain> {
                 child: IndexedStack(
                   index: controller.tabIndex,
                   children: [
-                    MhHome(),
-                    MhLogg(),
-                    MhProgresjon(),
-                    MhTest(),
-                    MhResultat(),
+                    FhHome(),
+                    FhLogg(),
+                    FhProgresjon(),
+                    FhTest(),
+                    FhResultat(),
                   ],
                 ),
               ),

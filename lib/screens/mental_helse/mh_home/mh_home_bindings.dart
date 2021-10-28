@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+
 import 'mh_home_controller.dart';
 
 class MhHomeBindings extends Bindings {

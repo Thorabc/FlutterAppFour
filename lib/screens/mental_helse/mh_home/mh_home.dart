@@ -9,7 +9,35 @@ class MhHome extends GetView<MhHomeController> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text("Hei"),
+      margin: EdgeInsets.only(top: 20),
+      alignment: Alignment.topCenter,
+      child: Column(
+        children: [
+          Text(
+            "Mental helse",
+            style: TextStyle(fontSize: 24),
+          ),
+          ExpansionTile(
+            title: Text("Nettsider:"),
+            children: [
+              Container(
+                width: 300,
+                height: 100,
+                child: ListView(
+                  children: [
+                    Text(
+                      "Kognitiv terapi:",
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                    ),
+                    Text("https://www.kognitiv.no/kognitiv-terapi/")
+                  ],
+                ),
+              )
+            ],
+          ),
+        ],
+      ),
     );
   }
 }

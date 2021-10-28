@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
@@ -36,16 +38,28 @@ class Home extends GetView<HomeController> {
                   Container(
                     margin: EdgeInsets.only(top: 60),
                     alignment: Alignment.center,
-                    child: Text(
-                      "Selvutviklingsapp",
-                      style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          letterSpacing: 2),
+                    child: Column(
+                      children: [
+                        Text(
+                          "Selvutviklingsapp",
+                          style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              letterSpacing: 2),
+                        ),
+                      ],
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(top: 20),
+                    padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+                    child: Text(
+                        "Selv om det er mange temaer innenfor selvutvikling, har vi valgt å fokusere på mental og fysisk helse i denne appen. For å bidra til at du blir mer bevisst på utfordringer og progresjon relatert til de.",
+                        style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400,
+                            letterSpacing: 1.8)),
+                  ),
+                  Container(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
@@ -103,7 +117,7 @@ class Home extends GetView<HomeController> {
                               ElevatedButton(
                                   style: ElevatedButton.styleFrom(
                                       primary: Colors.blue.shade600),
-                                  onPressed: () {},
+                                  onPressed: () => Get.toNamed(Routes.FhMain),
                                   child: Text(
                                     "gå til",
                                     textAlign: TextAlign.center,

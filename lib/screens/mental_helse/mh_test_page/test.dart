@@ -5,7 +5,9 @@ import 'package:get/get.dart';
 
 import 'test_controller.dart';
 
-class Test extends GetView<TestController> {
+class MhTest extends GetView<MhTestController> {
+  const MhTest({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -37,16 +39,18 @@ class Test extends GetView<TestController> {
                         style: TextStyle(fontSize: 24),
                       )),
                   CustomCard(
-                    "Angst",
-                    0,
+                    title: "Angst",
+                    valuesIndex: 0,
+                    isReversedThumbs: true,
+                    isReversedColors: true,
                   ),
                   CustomCard(
-                    "Motivasjon",
-                    1,
+                    title: "Motivasjon",
+                    valuesIndex: 1,
                   ),
                   CustomCard(
-                    "Produktivitet",
-                    2,
+                    title: "Produktivitet",
+                    valuesIndex: 2,
                   ),
                   Container(
                     padding: const EdgeInsets.symmetric(vertical: 10),
@@ -71,17 +75,23 @@ class Test extends GetView<TestController> {
 }
 
 class CustomCard extends StatelessWidget {
-  var controller = Get.find<TestController>();
+  final controller = Get.put(MhTestController());
 
   String title;
-
+  //IconData? icon;
   int valuesIndex;
+  bool isReversedThumbs;
+  bool isReversedColors;
 
   void onChanged(double value) {
     controller.values[valuesIndex].value = value;
   }
 
-  CustomCard(this.title, this.valuesIndex);
+  CustomCard(
+      {required this.title,
+      required this.valuesIndex,
+      this.isReversedColors = false,
+      this.isReversedThumbs = false});
 
   @override
   Widget build(BuildContext context) {
@@ -116,8 +126,10 @@ class CustomCard extends StatelessWidget {
                       ),
                       Column(
                         children: [
-                          const Icon(
-                            Icons.thumb_up_alt_sharp,
+                          Icon(
+                            isReversedThumbs
+                                ? Icons.thumb_down_sharp
+                                : Icons.thumb_up_alt_sharp,
                             color: Colors.white,
                           ),
                           RotatedBox(
@@ -125,14 +137,18 @@ class CustomCard extends StatelessWidget {
                             child: SizedBox(
                               child: SliderTheme(
                                 data: SliderTheme.of(context).copyWith(
-                                    activeTrackColor: Colors.green,
-                                    inactiveTrackColor: Colors.red.shade800,
+                                    activeTrackColor: isReversedColors
+                                        ? Colors.red.shade800
+                                        : Colors.green,
+                                    inactiveTrackColor: isReversedColors
+                                        ? Colors.green
+                                        : Colors.red.shade800,
                                     thumbColor: Colors.white,
                                     trackHeight: 20,
-                                    thumbShape: const RoundSliderThumbShape(
+                                    thumbShape: RoundSliderThumbShape(
                                       enabledThumbRadius: 20,
                                     ),
-                                    overlayShape: const RoundSliderOverlayShape(
+                                    overlayShape: RoundSliderOverlayShape(
                                         overlayRadius: 25.0)),
                                 child: Slider(
                                     min: 0,
@@ -142,8 +158,10 @@ class CustomCard extends StatelessWidget {
                               ),
                             ),
                           ),
-                          const Icon(
-                            Icons.thumb_down_sharp,
+                          Icon(
+                            isReversedThumbs
+                                ? Icons.thumb_up_alt_sharp
+                                : Icons.thumb_down_sharp,
                             color: Colors.white,
                           ),
                         ],

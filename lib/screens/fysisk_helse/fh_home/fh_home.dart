@@ -1,15 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
 import 'package:get/get.dart';
 
-import 'logg_controller.dart';
+import 'fh_home_controller.dart';
 
-class Logg extends GetView<LoggController> {
+class FhHome extends GetView<FhHomeController> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text("Hei"),
+      child: Text("FH Hjem siden"),
     );
   }
 }

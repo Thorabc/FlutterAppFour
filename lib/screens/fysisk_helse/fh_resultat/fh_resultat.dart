@@ -1,15 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
 import 'package:get/get.dart';
 
-import 'resultat_controller.dart';
+import 'fh_resultat_controller.dart';
 
-class Resultat extends GetView<ResultatController> {
+class FhResultat extends GetView<FhResultatController> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text("Hei"),
+      child: Center(child: Text("FH Resultat siden")),
     );
   }
 }
