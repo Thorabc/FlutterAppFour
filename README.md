@@ -1,16 +1,8 @@
-# flutter_application_4
+# Selvutviklingsapp for fysisk og mental helse
 
-A new Flutter project.
+Dette er en app jeg har startet på, forhåpentligvis så vil den bli et godt verktøy og motivasjon for andre til å forbedre sin mentale og fysiske helse. 
 
-## Getting Started
+## Ideer til appen:
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Å ha en logg side hvor du kan loggføre fysiske aktiviteter og treningsprogram (fysisk helse delen av appen) og utfordringer innen mental helse, hvor du kan list ting du har gjort som var vanskelig og hvor vanskelig det var fra 1 - 100. 
+- En progresjon side hvor du ser hvor mye du har gått opp eller ned den siste uka, måneden eller året. kanskje det å gå på butikken var 80/100 første gang du gjorde det og nå er den på 50, dvs den har gått ned med 30. 
