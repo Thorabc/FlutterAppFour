@@ -8,7 +8,12 @@ class FhHome extends GetView<FhHomeController> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text("FH Hjem siden"),
+      child: Container(
+          alignment: Alignment.topCenter,
+          child: Text(
+            "Fysisk helse",
+            style: TextStyle(fontSize: 20),
+          )),
     );
   }
 }

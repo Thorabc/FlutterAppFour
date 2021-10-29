@@ -1,50 +1,35 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'model/Exercise.dart';
 
 class FhLoggController extends GetxController {
-  final exercises = [
-    Exercise(
-      name: "Knebøy",
-      reps: 10,
-      weight: 30,
-    ),
-    Exercise(
-      name: "Deltahev",
-      reps: 12,
-      weight: 3,
-    ),
-    Exercise(
-      name: "Nedtrekk /m smalt grep",
-      reps: 12,
-      weight: 40,
-    ),
-    Exercise(
-      name: "Bensenk + heel tap",
-      reps: 10 + 20,
-      weight: 0,
-    ),
-    Exercise(
-      name: "Ettbeinspress",
-      reps: 12,
-      weight: 30,
-    ),
-    Exercise(
-      name: "Flies i kabel",
-      reps: 12,
-      weight: 5,
-    ),
-    Exercise(
-      name: "Dips på høy step-kasse",
-      reps: 10,
-      weight: 0,
-    ),
-    Exercise(
-      name: "Preacher curl",
-      reps: 10,
-      weight: 2,
-    )
-  ];
+  final ovelseNavnTextEditingController = TextEditingController().obs;
+  final repsEditingController = TextEditingController().obs;
+  final vektEditingController = TextEditingController().obs;
+
+  void addExcersice() {
+    var exerciseNameText = ovelseNavnTextEditingController.value.text;
+    var repsText = repsEditingController.value.text;
+    var weightText = vektEditingController.value.text;
+    if (exerciseNameText.isNotEmpty &&
+        repsText.isNotEmpty &&
+        weightText.isNotEmpty) {
+      try {
+        var ex = Exercise(
+          name: exerciseNameText,
+          reps: int.parse(repsText),
+          weight: int.parse(weightText),
+        );
+        exercises.add(ex);
+      } catch (e) {
+        print(e);
+      }
+    }
+    print(exercises);
+  }
+
+  final exercises = [].obs;
 
   // var ovelser = [
 //   'Knebøy'.obs,
