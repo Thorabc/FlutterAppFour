@@ -15,7 +15,7 @@ class MhHome extends GetView<MhHomeController> {
         children: [
           Text(
             "Mental helse",
-            style: TextStyle(fontSize: 24),
+            style: Theme.of(context).textTheme.headline1,
           ),
           Container(
             height: 170,
@@ -25,33 +25,33 @@ class MhHome extends GetView<MhHomeController> {
                 Expanded(
                   child: ExpansionTile(
                     title: Container(
-                      alignment: Alignment.center,
                       child: Text(
                         "Nettsider:",
-                        style: TextStyle(color: Colors.white),
+                        style: Theme.of(context)
+                            .textTheme
+                            .headline2
+                            ?.copyWith(color: Colors.white70),
                       ),
                     ),
                     children: [
                       Container(
                         height: 100,
-                        child: Container(
-                          padding: EdgeInsets.only(left: 20),
-                          child: ListView(
-                            children: [
-                              Text(
-                                "Kognitiv terapi:",
-                                style: TextStyle(
-                                    fontSize: 16, fontWeight: FontWeight.bold),
-                              ),
-                              Text("https://www.kognitiv.no/kognitiv-terapi"),
-                              Text(
-                                "Healthy Gamer:",
-                                style: TextStyle(
-                                    fontSize: 16, fontWeight: FontWeight.bold),
-                              ),
-                              Text("https://www.healthygamer.gg")
-                            ],
-                          ),
+                        padding: EdgeInsets.only(left: 20),
+                        child: ListView(
+                          children: [
+                            Text(
+                              "Kognitiv terapi:",
+                              style: Theme.of(context).textTheme.headline2,
+                            ),
+                            Text("https://www.kognitiv.no/kognitiv-terapi"),
+                            Text(
+                              "Healthy Gamer:",
+                              style: Theme.of(context).textTheme.headline2,
+                            ),
+                            Text(
+                              "https://www.healthygamer.gg",
+                            )
+                          ],
                         ),
                       )
                     ],
@@ -60,21 +60,29 @@ class MhHome extends GetView<MhHomeController> {
                 Expanded(
                   child: ExpansionTile(
                     title: Container(
-                      alignment: Alignment.center,
                       child: Text(
                         "Discord:",
-                        style: TextStyle(color: Colors.white),
+                        style: Theme.of(context)
+                            .textTheme
+                            .headline2
+                            ?.copyWith(color: Colors.white70),
                       ),
                     ),
                     children: [
                       Container(
-                        child: Text(
-                          "Healthy Gamer:",
-                          style: TextStyle(
-                              fontSize: 16, fontWeight: FontWeight.bold),
+                        height: 100,
+                        padding: EdgeInsets.only(left: 20),
+                        child: ListView(
+                          children: [
+                            Text(
+                              "Healthy Gamer:",
+                              textAlign: TextAlign.start,
+                              style: Theme.of(context).textTheme.headline2,
+                            ),
+                            Text("https://discord.gg/healthygamergg"),
+                          ],
                         ),
-                      ),
-                      Text("https://discord.gg/healthygamergg"),
+                      )
                     ],
                   ),
                 ),

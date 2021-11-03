@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "594782648533",
+    "project_id": "selvutviklingsapp",
+    "storage_bucket": "selvutviklingsapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:594782648533:android:8acdbcd202d5941ed68a5c",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_4"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "594782648533-2342m5epkhddbg8na22cmqv91605kpre.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-gF4K0CfnIAuM0LG_7QRlhi5gmxfyk2I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "594782648533-2342m5epkhddbg8na22cmqv91605kpre.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

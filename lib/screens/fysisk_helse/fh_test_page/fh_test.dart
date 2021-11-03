@@ -8,7 +8,11 @@ class FhTest extends GetView<FhTestController> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Center(child: Text("FH Test siden")),
+      child: Center(
+          child: Text(
+        "FH Test siden",
+        style: Theme.of(context).textTheme.headline1,
+      )),
     );
   }
 }

@@ -31,24 +31,5 @@ class FhLoggController extends GetxController {
 
   final exercises = [].obs;
 
-  // var ovelser = [
-//   'Knebøy'.obs,
-  //   'Benpress'.obs,
-  //   'Benkpress'.obs,
-  //   'Sittende roing'.obs,
-  // ].obs;
-  // var reps = [
-  //   '12'.obs,
-  //   '8'.obs,
-  //   '6'.obs,
-  //   '8'.obs,
-  // ].obs;
-  // var vekt = [
-  //   '60'.obs,
-  //   '200'.obs,
-  //   '40'.obs,
-  //   '60'.obs,
-  // ].obs;
-
   var selected = "".obs;
 }

@@ -1,3 +1,7 @@
+import 'package:flutter_application_4/screens/auth/login/login.dart';
+import 'package:flutter_application_4/screens/auth/login/login_binding.dart';
+import 'package:flutter_application_4/screens/auth/register/register.dart';
+import 'package:flutter_application_4/screens/auth/register/register_binding.dart';
 import 'package:flutter_application_4/screens/fysisk_helse/fh_home/fh_home.dart';
 import 'package:flutter_application_4/screens/fysisk_helse/fh_home/fh_home_bindings.dart';
 import 'package:flutter_application_4/screens/fysisk_helse/fh_logg/fh_logg.dart';
@@ -43,6 +47,16 @@ class AppPages {
         participatesInRootNavigator: true,
         preventDuplicates: true,
         children: [
+          GetPage(
+            name: Routes.Register,
+            page: () => Register(),
+            binding: RegisterBindings(),
+          ),
+          GetPage(
+            name: Routes.Login,
+            page: () => Login(),
+            binding: LoginBindings(),
+          ),
           GetPage(
             name: Routes.Home,
             page: () => Home(),

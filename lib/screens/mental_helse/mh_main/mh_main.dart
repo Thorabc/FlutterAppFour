@@ -6,6 +6,7 @@ import 'package:flutter_application_4/screens/mental_helse/mh_home/mh_home.dart'
 import 'package:flutter_application_4/screens/mental_helse/mh_progresjon/progresjon.dart';
 import 'package:flutter_application_4/screens/mental_helse/mh_resultat/resultat.dart';
 import 'package:flutter_application_4/screens/mental_helse/mh_test_page/test.dart';
+import 'package:flutter_application_4/theme/theme_constants.dart';
 import 'package:get/get.dart';
 
 import 'mh_main_controller.dart';
@@ -30,16 +31,17 @@ class _MhMainState extends State<MhMain> {
             body: SafeArea(
               child: Container(
                 decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                  begin: Alignment.topRight,
-                  end: Alignment.bottomLeft,
-                  colors: [
-                    Colors.blue.shade50,
-                    Colors.blue.shade200,
-                    Colors.blue.shade400,
-                    Colors.blue.shade600,
-                  ],
-                )),
+                  gradient: LinearGradient(
+                    begin: Alignment.topRight,
+                    end: Alignment.bottomLeft,
+                    colors: [
+                      Colors.blue.shade50,
+                      Colors.blue.shade200,
+                      Colors.blue.shade400,
+                      Colors.blue.shade600,
+                    ],
+                  ),
+                ),
                 child: IndexedStack(
                   index: controller.tabIndex,
                   children: [
@@ -61,6 +63,10 @@ class _MhMainState extends State<MhMain> {
                   currentIndex: controller.tabIndex,
                   showSelectedLabels: true,
                   showUnselectedLabels: true,
+                  backgroundColor: Colors.black54,
+                  unselectedItemColor: Colors.white60,
+                  selectedItemColor: Colors.white,
+
                   type: BottomNavigationBarType.fixed,
                   //her er hvert element i navigasjonsbaren, du kan bytte ut ikonene med andre.
                   items: [
@@ -72,7 +78,7 @@ class _MhMainState extends State<MhMain> {
                     ),
                     BottomNavigationBarItem(
                       icon: Icon(Icons.auto_graph),
-                      label: "Progresjon",
+                      label: "Fremgang",
                     ),
                     BottomNavigationBarItem(
                       icon: Icon(Icons.bookmarks_rounded),

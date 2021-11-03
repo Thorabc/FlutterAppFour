@@ -6,6 +6,7 @@ import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_application_4/routes/app_routes.dart';
+import 'package:flutter_application_4/theme/theme_constants.dart';
 import 'package:get/get.dart';
 
 import 'home_controller.dart';
@@ -15,16 +16,17 @@ class Home extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          gradient: LinearGradient(
-        begin: Alignment.topRight,
-        end: Alignment.bottomLeft,
-        colors: [
-          Colors.blue.shade50,
-          Colors.blue.shade200,
-          Colors.blue.shade400,
-          Colors.blue.shade600,
-        ],
-      )),
+        gradient: LinearGradient(
+          begin: Alignment.topRight,
+          end: Alignment.bottomLeft,
+          colors: [
+            Colors.blue[50]!,
+            Colors.blue.shade200,
+            Colors.blue.shade400,
+            Colors.blue.shade600,
+          ],
+        ),
+      ),
       child: Container(
         padding: const EdgeInsets.only(bottom: 20),
         child: Scaffold(
@@ -42,10 +44,11 @@ class Home extends GetView<HomeController> {
                       children: [
                         Text(
                           "Selvutviklingsapp",
-                          style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                              letterSpacing: 2),
+                          style: Theme.of(context).textTheme.headline1,
+                          // style: TextStyle(
+                          //     fontSize: 20,
+                          //     fontWeight: FontWeight.bold,
+                          //     letterSpacing: 2),
                         ),
                       ],
                     ),
@@ -72,9 +75,7 @@ class Home extends GetView<HomeController> {
                               Container(
                                 child: Text(
                                   "Mental Helse",
-                                  style: TextStyle(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.w600),
+                                  style: Theme.of(context).textTheme.headline2,
                                 ),
                               ),
                               Container(
@@ -103,9 +104,7 @@ class Home extends GetView<HomeController> {
                               Container(
                                 child: Text(
                                   "Fysisk Helse",
-                                  style: TextStyle(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.w600),
+                                  style: Theme.of(context).textTheme.headline2,
                                 ),
                               ),
                               Container(

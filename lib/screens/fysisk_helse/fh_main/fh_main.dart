@@ -1,11 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:flutter_application_4/screens/fysisk_helse/fh_kosthold/fh_kosthold.dart';
 import 'package:flutter_application_4/screens/fysisk_helse/fh_logg/fh_logg.dart';
 import 'package:flutter_application_4/screens/fysisk_helse/fh_home/fh_home.dart';
 import 'package:flutter_application_4/screens/fysisk_helse/fh_progresjon/fh_progresjon.dart';
 import 'package:flutter_application_4/screens/fysisk_helse/fh_resultat/fh_resultat.dart';
 import 'package:flutter_application_4/screens/fysisk_helse/fh_test_page/fh_test.dart';
+import 'package:flutter_application_4/theme/theme_constants.dart';
 import 'package:get/get.dart';
 
 import 'fh_main_controller.dart';
@@ -30,21 +32,24 @@ class _FhMainState extends State<FhMain> {
             body: SafeArea(
               child: Container(
                 decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                  begin: Alignment.topRight,
-                  end: Alignment.bottomLeft,
-                  colors: [
-                    Colors.blue.shade50,
-                    Colors.blue.shade200,
-                    Colors.blue.shade400,
-                    Colors.blue.shade600,
-                  ],
-                )),
+                  //  gradient: AppWidgets.backgroundGradient,
+                  gradient: LinearGradient(
+                    begin: Alignment.topRight,
+                    end: Alignment.bottomLeft,
+                    colors: [
+                      Colors.blue.shade50,
+                      Colors.blue.shade200,
+                      Colors.blue.shade400,
+                      Colors.blue.shade600,
+                    ],
+                  ),
+                ),
                 child: IndexedStack(
                   index: controller.tabIndex,
                   children: [
                     FhHome(),
                     FhLogg(),
+                    FhKosthold(),
                     FhProgresjon(),
                     FhTest(),
                     FhResultat(),
@@ -61,6 +66,9 @@ class _FhMainState extends State<FhMain> {
                   currentIndex: controller.tabIndex,
                   showSelectedLabels: true,
                   showUnselectedLabels: true,
+                  backgroundColor: Colors.black54,
+                  unselectedItemColor: Colors.white60,
+                  selectedItemColor: Colors.white,
                   type: BottomNavigationBarType.fixed,
                   //her er hvert element i navigasjonsbaren, du kan bytte ut ikonene med andre.
                   items: [
@@ -71,8 +79,12 @@ class _FhMainState extends State<FhMain> {
                       label: "Logg",
                     ),
                     BottomNavigationBarItem(
+                      icon: Icon(Icons.food_bank),
+                      label: "Kosthold",
+                    ),
+                    BottomNavigationBarItem(
                       icon: Icon(Icons.auto_graph),
-                      label: "Progresjon",
+                      label: "Fremgang",
                     ),
                     BottomNavigationBarItem(
                       icon: Icon(Icons.bookmarks_rounded),
@@ -94,7 +106,7 @@ class _FhMainState extends State<FhMain> {
                     padding: const EdgeInsets.only(left: 10, right: 10),
                     child: Container(
                       height: 3,
-                      width: (bottomNavigationBarSize.width - 80) / 5,
+                      width: (bottomNavigationBarSize.width - 80) / 6,
                     )),
               ),
             ]));

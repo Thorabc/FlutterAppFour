@@ -11,8 +11,8 @@ class FhHome extends GetView<FhHomeController> {
       child: Container(
           alignment: Alignment.topCenter,
           child: Text(
-            "Fysisk helse",
-            style: TextStyle(fontSize: 20),
+            "Hjem",
+            style: Theme.of(context).textTheme.headline1,
           )),
     );
   }
