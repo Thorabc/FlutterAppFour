@@ -2,6 +2,7 @@ import 'package:flutter_application_4/screens/fysisk_helse/fh_main/fh_main.dart'
 
 class Routes {
   Routes._();
+  static const Splash = Paths.splash;
   static const Register = Paths.register;
   static const Login = Paths.login;
   static const Home = Paths.home;
@@ -23,6 +24,7 @@ class Routes {
 
 class Paths {
   Paths._();
+  static const String splash = '/splash';
   static const String register = '/register';
   static const String login = '/login';
   static const String home = '/home';

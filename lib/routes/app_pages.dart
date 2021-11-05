@@ -30,6 +30,7 @@ import 'package:flutter_application_4/screens/mental_helse/mh_test_page/test.dar
 import 'package:flutter_application_4/screens/mental_helse/mh_test_page/test_bindings.dart';
 import 'package:flutter_application_4/screens/root/root_bindings.dart';
 import 'package:flutter_application_4/screens/root/root_view.dart';
+import 'package:flutter_application_4/screens/splashScreen/splash.dart';
 import 'package:get/get.dart';
 
 import 'app_routes.dart';
@@ -48,6 +49,10 @@ class AppPages {
         preventDuplicates: true,
         children: [
           GetPage(
+            name: Routes.Splash,
+            page: () => Splash(),
+          ),
+          GetPage(
             name: Routes.Register,
             page: () => Register(),
             binding: RegisterBindings(),
@@ -59,7 +64,9 @@ class AppPages {
           ),
           GetPage(
             name: Routes.Home,
-            page: () => Home(),
+            page: () => Home(
+              email: '',
+            ),
             binding: HomeBindings(),
           ),
           //MhMain
